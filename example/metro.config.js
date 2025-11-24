@@ -17,4 +17,26 @@ const config = withMetroConfig(getDefaultConfig(__dirname), {
 
 config.resolver.unstable_enablePackageExports = true;
 
+// Fix for "Invalid hook call" - ensure only one copy of React is used
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  if (
+    moduleName === 'react' ||
+    moduleName === 'react-native' ||
+    moduleName === 'react/jsx-runtime'
+  ) {
+    const pathToResolve = path.resolve(
+      __dirname,
+      'node_modules',
+      moduleName
+    );
+    return {
+      type: 'sourceFile',
+      filePath: require.resolve(moduleName, {
+        paths: [pathToResolve],
+      }),
+    };
+  }
+  return context.resolveRequest(context, moduleName, platform);
+};
+
 module.exports = config;
