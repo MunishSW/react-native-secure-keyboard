@@ -1,0 +1,99 @@
+{
+  "name": "react-native-secure-keyboard",
+  "version": "0.1.0",
+  "description": "React Native Custom Secure Keyboard is a security-focused input framework designed to replace the default operating system keyboard with a fully controlled, in-app keyboard.It helps protect sensitive user data (PIN, password, MPIN, card details, OTP) from keylogging, clipboard attacks, predictive text leaks, and untrusted 3rd-party keyboards.",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.tsx",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "react-native.config.js",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "example": "yarn workspace react-native-secure-keyboard-example",
+    "clean": "del-cli lib",
+    "prepare": "bob build",
+    "typecheck": "tsc"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MunishSW/react-native-secure-keyboard.git"
+  },
+  "author": "Munish Vira <munishv@snapwork.com> (https://github.com/MunishSW/react-native-secure-keyboard)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MunishSW/react-native-secure-keyboard/issues"
+  },
+  "homepage": "https://github.com/MunishSW/react-native-secure-keyboard#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native/babel-preset": "0.81.1",
+    "@types/react": "^19.1.12",
+    "del-cli": "^6.0.0",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-builder-bob": "^0.40.13",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "workspaces": [
+    "example"
+  ],
+  "packageManager": "yarn@4.11.0",
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "create-react-native-library": {
+    "languages": "js",
+    "type": "library",
+    "tools": [],
+    "version": "0.55.0"
+  }
+}
