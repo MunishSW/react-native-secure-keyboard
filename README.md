@@ -18,14 +18,16 @@ A security-focused, fully customizable numeric keyboard component for React Nati
 
 ## 📦 Installation
 
+### Install from npm (when published)
 ```sh
 npm install react-native-secure-keyboard
 ```
 
 or
 
+### Install from GitHub
 ```sh
-yarn add react-native-secure-keyboard
+npm install https://github.com/MunishSW/react-native-secure-keyboard.git
 ```
 
 ## 🚀 Quick Start
