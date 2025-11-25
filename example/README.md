@@ -23,7 +23,7 @@ The example app showcases:
 Before running the example app, make sure you have:
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- [Yarn](https://yarnpkg.com/) (v4.11.0 or higher)
+- [Yarn](https://yarnpkg.com/) (v4.11.0 or higher) or [npm](https://www.npmjs.com/) (v8 or higher)
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
 
 For iOS:
@@ -43,13 +43,27 @@ For Android:
    ```
 
 2. **Install dependencies** from the root:
+   
+   Using Yarn:
    ```sh
    yarn install
    ```
+   
+   Using npm:
+   ```sh
+   npm install
+   ```
 
 3. **Build the library**:
+   
+   Using Yarn:
    ```sh
    yarn prepare
+   ```
+   
+   Using npm:
+   ```sh
+   npm run prepare
    ```
 
 ### Running the Example App
@@ -58,9 +72,16 @@ For Android:
 
 Navigate to the example directory and start Expo:
 
+Using Yarn:
 ```sh
 cd example
 yarn start
+```
+
+Using npm:
+```sh
+cd example
+npm start
 ```
 
 Then:
@@ -72,21 +93,45 @@ Then:
 #### Option 2: Using Direct Commands
 
 **For iOS:**
+
+Using Yarn:
 ```sh
 cd example
 yarn ios
 ```
 
+Using npm:
+```sh
+cd example
+npm run ios
+```
+
 **For Android:**
+
+Using Yarn:
 ```sh
 cd example
 yarn android
 ```
 
+Using npm:
+```sh
+cd example
+npm run android
+```
+
 **For Web:**
+
+Using Yarn:
 ```sh
 cd example
 yarn web
+```
+
+Using npm:
+```sh
+cd example
+npm run web
 ```
 
 ## 🎨 Features Demonstrated
@@ -160,23 +205,39 @@ The main example code is in `src/App.tsx`. You can:
 ### Testing on Physical Devices
 
 #### iOS (Physical Device)
+
+Using Yarn:
 ```sh
 cd example
 yarn ios --device
+```
+
+Using npm:
+```sh
+cd example
+npm run ios -- --device
 ```
 
 #### Android (Physical Device)
 1. Enable USB debugging on your Android device
 2. Connect via USB
 3. Run:
+   
+   Using Yarn:
    ```sh
    cd example
    yarn android
    ```
+   
+   Using npm:
+   ```sh
+   cd example
+   npm run android
+   ```
 
 Or use Expo Go:
 1. Install [Expo Go](https://expo.dev/client) on your device
-2. Run `yarn start` in the example directory
+2. Run `yarn start` or `npm start` in the example directory
 3. Scan the QR code with your device
 
 ## 🐛 Troubleshooting
@@ -184,6 +245,8 @@ Or use Expo Go:
 ### "Invalid hook call" Error
 
 If you see this error, clear the cache:
+
+Using Yarn:
 ```sh
 cd example
 rm -rf node_modules .expo
@@ -191,17 +254,35 @@ yarn install
 yarn start --clear
 ```
 
+Using npm:
+```sh
+cd example
+rm -rf node_modules .expo
+npm install
+npm start -- --clear
+```
+
 ### Metro Bundler Issues
 
 Clear Metro cache:
+
+Using Yarn:
 ```sh
 cd example
 yarn start --clear
 ```
 
+Using npm:
+```sh
+cd example
+npm start -- --clear
+```
+
 ### iOS Build Issues
 
 Reset iOS build:
+
+Using Yarn:
 ```sh
 cd example/ios
 pod deintegrate
@@ -210,14 +291,33 @@ cd ..
 yarn ios
 ```
 
+Using npm:
+```sh
+cd example/ios
+pod deintegrate
+pod install
+cd ..
+npm run ios
+```
+
 ### Android Build Issues
 
 Clean Android build:
+
+Using Yarn:
 ```sh
 cd example/android
 ./gradlew clean
 cd ..
 yarn android
+```
+
+Using npm:
+```sh
+cd example/android
+./gradlew clean
+cd ..
+npm run android
 ```
 
 ## 📱 Supported Platforms
